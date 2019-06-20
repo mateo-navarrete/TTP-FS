@@ -16,13 +16,9 @@ const initBalance = (req, res, next) => {
 };
 
 const updateBalance = (req, res, next) => {
-  let config = {
-    email: req.body.email,
-    total: req.body.total,
-  };
   let sqlStr =
     'UPDATE balance SET total=${total} WHERE user_id= ( SELECT id FROM users u WHERE email=${email} )';
-  db.none(sqlStr, config)
+  db.none(sqlStr, req.body)
     .then(data => {
       res.send({
         status: 'success',
