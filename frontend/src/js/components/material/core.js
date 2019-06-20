@@ -12,6 +12,7 @@ import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
+import Slider from '@material-ui/lab/Slider';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
@@ -30,6 +31,7 @@ export {
   InputAdornment,
   InputLabel,
   Paper,
+  Slider,
   Toolbar,
   Typography
 };

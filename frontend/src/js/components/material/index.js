@@ -13,6 +13,7 @@ import {
   InputAdornment,
   InputLabel,
   Paper,
+  Slider,
   Toolbar,
   Typography
 } from './core';
@@ -39,6 +40,7 @@ export {
   InputAdornment,
   InputLabel,
   Paper,
+  Slider,
   Toolbar,
   Typography,
   LockOutlinedIcon,

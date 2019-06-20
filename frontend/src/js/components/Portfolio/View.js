@@ -1,6 +1,7 @@
 //jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 //jscs:disable requireShorthandArrowFunctions
 import React, { Fragment as F } from 'react';
+import { StockShop } from '../StockShop';
 import { Grid, Paper } from '../material';
 import { withStyles } from '../../containers';
 
@@ -61,7 +62,9 @@ const WrappedComponent = ({
             <Paper className={classes.paper}> {renderStocks}</Paper>
           </Grid>
           <Grid item xs={6}>
-            <Paper className={classes.paper}>'Stock Shop'</Paper>
+            <Paper className={classes.paper}>
+              <StockShop />
+            </Paper>
           </Grid>
         </Grid>
       </div>
