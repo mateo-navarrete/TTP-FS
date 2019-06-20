@@ -1,4 +1,5 @@
-const usersApi = require('./usersRoutes');
+const balancesApi = require('./balancesRoutes');
 const transactionsApi = require('./transactionsRoutes');
+const usersApi = require('./usersRoutes');
 
-module.exports = { usersApi, transactionsApi };
+module.exports = { balancesApi, transactionsApi, usersApi };
