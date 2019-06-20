@@ -14,9 +14,9 @@ __Backend:__
 
 __Frontend:__
 - [x] React
-- [ ] Redux
-- [ ] Axios
-- [ ] Material-UI
+- [x] Redux
+- [x] Axios
+- [x] Material-UI
 - [ ] Socket.IO
 
 ### Wireframes
