@@ -1,6 +1,12 @@
-//jscs:disable requireShorthandArrowFunctions
 import React, { Fragment as F } from 'react';
+import { withAuthStatus } from '../containers';
 
-export const Views = props => {
-  return <F>Views</F>;
+const WrappedComponent = ({ email, ...props }) => {
+  let isAuthenticated = email ? true : false;
+  const renderView = isAuthenticated
+    ? 'render Private View'
+    : 'render Public View';
+  return <F>{renderView}</F>;
 };
+
+export const Views = withAuthStatus(WrappedComponent);
