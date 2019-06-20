@@ -9,7 +9,7 @@ export const PublicViews = () => {
   return (
     <F>
       <Switch>
-        <Route path="/login" render={props => <Signin {...props} />} />
+        <Route path="/signin" render={props => <Signin {...props} />} />
         <Route path="/register" render={props => <Register {...props} />} />
         <Route exact path="/" render={props => <Landing {...props} />} />
         <Redirect to="/" />
