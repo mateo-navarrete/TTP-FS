@@ -3,6 +3,7 @@
 import React, { Fragment as F } from 'react';
 import { Grid, Paper } from '../material';
 import { withStyles } from '../../containers';
+import { formatDate } from '../../utils';
 
 const styles = theme => ({
   root: {
@@ -18,11 +19,11 @@ const styles = theme => ({
 
 const WrappedComponent = ({ classes, transactions, user_name, ...props }) => {
   const renderStocks = transactions.map((stock, i) => {
-    let mDate = stock.date;
+    let formattedDate = formatDate(stock.date);
     return (
       <F key={i}>
         <div>
-          {mDate} {stock.symbol} ${stock.sale_price} x{stock.quantity} $
+          {formattedDate} {stock.symbol} ${stock.sale_price} x{stock.quantity} $
           {(+stock.sale_price * stock.quantity).toFixed(2)}
         </div>
       </F>

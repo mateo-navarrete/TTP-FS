@@ -3,9 +3,7 @@
 import React from 'react';
 import { Button } from './Button';
 import {
-  Checkbox,
   FormControl,
-  FormControlLabel,
   IconButton,
   Input,
   InputAdornment,

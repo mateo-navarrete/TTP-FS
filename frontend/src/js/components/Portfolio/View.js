@@ -27,22 +27,24 @@ const WrappedComponent = ({
 }) => {
   //TODO children => PortfolioHeader, StockList, StockShop
   let pValue = 0;
-  const renderStocks = portfolio.map((stock, i) => {
-    let total =
-      stockData[stock.symbol] &&
-      +(+stockData[stock.symbol].price * +stock.total).toFixed(2);
-    if (total) pValue += total;
-    return (
-      <F key={i}>
-        <div>
-          {stock.symbol} {stock.total} @$
-          {stockData[stock.symbol] && stockData[stock.symbol].price}
-          total$
-          {total}
-        </div>
-      </F>
-    );
-  });
+  const renderStocks =
+    stockData &&
+    portfolio.map((stock, i) => {
+      let total =
+        stockData[stock.symbol] &&
+        +(+stockData[stock.symbol].price * +stock.total).toFixed(2);
+      if (total) pValue += total;
+      return (
+        <F key={i}>
+          <div>
+            {stock.symbol} {stock.total} @$
+            {stockData[stock.symbol] && stockData[stock.symbol].price}
+            total$
+            {total}
+          </div>
+        </F>
+      );
+    });
   return (
     <F>
       <div className={classes.root}>
