@@ -5,7 +5,7 @@ const { signinRequired } = require('../db/auth/utils');
 
 const {
   deleteUser,
-  getUser,
+  getUserPortfolio,
   isAuthenticated,
   registerUser,
   signinUser,
@@ -13,7 +13,7 @@ const {
 } = require('../db/queries/usersQueries');
 
 router.get('/isAuthenticated', isAuthenticated);
-router.get('/:email', getUser);
+router.get('/:email', getUserPortfolio);
 
 router.post('/register', registerUser);
 router.post('/signin', passport.authenticate('local', {}), signinUser);
