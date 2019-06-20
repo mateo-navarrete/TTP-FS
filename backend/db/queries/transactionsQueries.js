@@ -15,6 +15,21 @@ const getTransactions = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const handleTransaction = (req, res, next) => {
+  let sqlStr =
+    'INSERT INTO transactions (user_id, stock_symbol, sale_price, quantity) VALUES ( ( SELECT id FROM users u WHERE email=${email} ), ${stock_symbol}, ${sale_price}, ${quantity} )';
+  db.none(sqlStr, req.body)
+    .then(data => {
+      res.send({
+        status: 'success',
+        data: data,
+        message: `completed transaction of user: ${req.body.email}`,
+      });
+    })
+    .catch(err => next(err));
+};
+
 module.exports = {
   getTransactions,
+  handleTransaction,
 };
