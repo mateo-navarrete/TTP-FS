@@ -1,34 +1,111 @@
 # TTP-FS
 
-**TO DEPLOY DEV SERVER:**
-inside app folder =>
-```npm start```
+TTP_FS is a fullstack web based stock portfolio application with real time stock quotes provided by the [IEX API][iex api].
 
-// for example:
+[iex api]:https://iextrading.com/developer/docs/#getting-started
 
-```
-cd TTP-FS
-npm start
+_Technologies, frameworks, and libraries used include:_  
 
-```
+__Backend:__
+- [x] Express
+- [x] Node
+- [ ] Postgresql
+- [ ] Passport
 
-// the app will automatically open on http://localhost:3000/
-// the backend express server can be viewed on http://localhost:3100/
+__Frontend:__
+- [x] React
+- [ ] Redux
+- [ ] Axios
+- [ ] Material-UI
+- [ ] Socket.IO
 
+### Wireframes
+
+Route URL |
+-|-
+/register |    
+
+![register](docs/wireframes/register.png)
 ---
 
-**frontend @ http://localhost:3000/**
-**backend @ http://localhost:3100/**
+Route URL |
+-|-
+/signin |    
 
----
+![signin](docs/wireframes/signin.png)  
+--
 
-**FAQ**  
-@ initial git add . => command line may display CRLF to LF etc
+Route URL |
+-|-
+/portfolio |    
 
-This is just letting you know that your code editor is doing its job and is saving the files in your preferred format.
-More details:
-https://stackoverflow.com/questions/1552749/difference-between-cr-lf-lf-and-cr-line-break-types
+![portfolio](docs/wireframes/portfolio.png)
+--
 
----
+Route URL |
+-|-
+/transactions |    
 
-Cheers!
+![transactions](docs/wireframes/transactions.png)
+--
+
+### User Stories
+
+![user-stories](docs/wireframes/user-stories.png)
+--
+
+- [ ] 1.0 registration requires name, email, & password  
+- [ ] 1.1 default balance $5000  
+- [ ] 1.2 registration requires unique email  
+
+- [ ] 2.0 authentication requires email & password  
+
+- [ ] 3.0 buying stock requires ticker symbol & quantity   
+- [ ] 3.1 quantity must be integer  
+- [ ] 3.2 buying stock requires balance >= ( stock price * quantity )  
+- [ ] 3.3 buying stock requires valid ticker symbol  
+
+- [ ] 4.0 transactions list view  
+
+- [ ] 5.0 portfolio ( stock details ) list view  
+- [ ] 5.1 real time stock price * quantity owned  
+
+- [ ] 6.0 dynamic portfolio font colors  
+- [ ] 6.1 current stock $ < day open $ = red  
+- [ ] 6.2 current stock $ = day open $ = gray  
+- [ ] 6.3 current stock $ > day open $ = green  
+
+### DB Schema
+
+__users__
+column | data_type | details
+-|-|-
+id | integer | SERIAL PRIMARY
+user_name | string | UNIQUE NOT NULL
+email | string | UNIQUE NOT NULL
+password_digest | string | NOT NULL
+created_date | date | DEFAULT CURRENT_TIMESTAMP
+
+__balance__
+column | data_type | details
+-|-|-
+id | integer | SERIAL PRIMARY
+user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+total | string | NOT NULL
+
+__transactions__
+column | data_type | details
+-|-|-
+id | integer | SERIAL PRIMARY
+user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+stock_symbol | string | NOT NULL
+sale_price | string | NOT NULL
+quantity | integer | NOT NULL
+created_date | date | DEFAULT CURRENT_TIMESTAMP  
+
+___NOTE:___  
+Prices are saved in the db as strings in the backend and then converted to numbers on the frontend to preserve accuracy when dealing with currency.  
+
+
+__TODO:__
+- [ ] Deploy to Heroku
