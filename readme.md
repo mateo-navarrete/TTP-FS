@@ -56,10 +56,10 @@ Route URL | `/transactions`
 
 - [X] 2.0 authentication requires email & password  
 
-- [ ] 3.0 buying stock requires ticker symbol & quantity   
-- [ ] 3.1 quantity must be integer  
-- [ ] 3.2 buying stock requires balance >= ( stock price * quantity )  
-- [ ] 3.3 buying stock requires valid ticker symbol  
+- [X] 3.0 buying stock requires ticker symbol & quantity   
+- [X] 3.1 quantity must be integer  
+- [X] 3.2 buying stock requires balance >= ( stock price * quantity )  
+- [X] 3.3 buying stock requires valid ticker symbol  
 
 - [X] 4.0 transactions list view  
 
