@@ -1,3 +1,4 @@
-import { AppBar, Toolbar } from './core';
+import { AppBar, Button, Toolbar } from './core';
+import { SignoutIcon } from './icons';
 
-export { AppBar, Toolbar };
+export { AppBar, Button, Toolbar, SignoutIcon };

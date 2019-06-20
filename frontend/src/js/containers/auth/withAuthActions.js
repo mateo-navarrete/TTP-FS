@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export const withAuthStatus = WrappedComponent => {
+export const withAuthActions = WrappedComponent => {
   class HOC extends Component {
     render() {
       return <WrappedComponent {...this.props} />;
