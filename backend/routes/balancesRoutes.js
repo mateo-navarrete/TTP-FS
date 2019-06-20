@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { initBalance } = require('../db/queries/balancesQueries');
+const { initBalance, updateBalance } = require('../db/queries/balancesQueries');
 
-router.post('/:email', initBalance);
+router.post('/', initBalance);
+router.patch('/', updateBalance);
 
 module.exports = router;
