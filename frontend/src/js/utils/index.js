@@ -1,7 +1,7 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { deleteData, getData, patchData, postData } from './api';
+import { deleteData, getData, patchData, postData, formatDate } from './api';
 
-export { CssBaseline, deleteData, getData, patchData, postData };
+export { CssBaseline, deleteData, getData, patchData, postData, formatDate };
 
 export const getSymbolStr = arr => {
   let str = '';
