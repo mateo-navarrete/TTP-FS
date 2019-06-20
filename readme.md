@@ -88,7 +88,7 @@ __balance__
 column | data_type | details
 -|-|-
 id | integer | SERIAL PRIMARY
-user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL
 total | string | NOT NULL
 
 __transactions__  
@@ -96,13 +96,13 @@ __transactions__
 column | data_type | details
 -|-|-
 id | integer | SERIAL PRIMARY
-user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL
 stock_symbol | string | NOT NULL
 sale_price | string | NOT NULL
 quantity | integer | NOT NULL
 created_date | date | DEFAULT CURRENT_TIMESTAMP  
 
-___NOTE:___  
+___NOTE:___    
 Prices are saved in the db as strings in the backend and then converted to numbers on the frontend to preserve accuracy when dealing with currency.  
 
 
@@ -124,3 +124,9 @@ DELETE | `/api/users/:email` | deleteUser
 
 __TODO:__
 - [ ] Deploy to Heroku
+
+___FOR REFERENCE:___   
+
+![project](docs/wireframes/project.png)
+
+---
