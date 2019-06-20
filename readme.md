@@ -51,7 +51,7 @@ Route URL | `/transactions`
 --
 
 - [X] 1.0 registration requires name, email, & password  
-- [ ] 1.1 default balance $5000  
+- [X] 1.1 default balance $5000  
 - [X] 1.2 registration requires unique email  
 
 - [X] 2.0 authentication requires email & password  
