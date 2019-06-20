@@ -8,7 +8,6 @@ const initBalance = (req, res, next) => {
     .then(data => {
       res.send({
         status: 'success',
-        data: data,
         message: `init balance of user: ${req.body.email}`,
       });
     })
@@ -22,7 +21,6 @@ const updateBalance = (req, res, next) => {
     .then(data => {
       res.send({
         status: 'success',
-        data: data,
         message: `updated balance of user: ${req.body.email}`,
       });
     })

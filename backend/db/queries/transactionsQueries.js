@@ -22,7 +22,6 @@ const handleTransaction = (req, res, next) => {
     .then(data => {
       res.send({
         status: 'success',
-        data: data,
         message: `completed transaction of user: ${req.body.email}`,
       });
     })

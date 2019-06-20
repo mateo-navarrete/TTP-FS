@@ -1,6 +1,7 @@
 //jscs:disable requireShorthandArrowFunctions
 //jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 import { SET_AUTH_STATUS } from '../../constants';
+import { initBalance } from '../';
 import { getData, postData } from '../../utils';
 
 const setAuthStatus = authStatus => {
@@ -18,9 +19,13 @@ export const getAuthStatus = () => dispatch => {
 };
 
 export const registerUser = user => dispatch => {
-  postData('/api/users/register', user).then(res => {
-    dispatch(signinUser(user));
-  });
+  postData('/api/users/register', user)
+    .then(res => {
+      dispatch(initBalance(user));
+    })
+    .then(res => {
+      dispatch(signinUser(user));
+    });
 };
 
 export const signinUser = ({ email, password }) => dispatch => {
