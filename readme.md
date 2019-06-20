@@ -7,17 +7,17 @@ TTP_FS is a fullstack web based stock portfolio application with real time stock
 _Technologies, frameworks, and libraries used include:_  
 
 __Backend:__
-- [x] Express
-- [x] Node
+- [X] Express
+- [X] Node
 - [X] Postgresql
 - [X] Passport
 
 __Frontend:__
-- [x] React
-- [x] Redux
-- [x] Axios
-- [x] Material-UI
-- [ ] Socket.IO
+- [X] React
+- [X] Redux
+- [X] Axios
+- [X] Material-UI
+- [X] Socket.IO
 
 ### Wireframes
 
@@ -64,7 +64,7 @@ Route URL | `/transactions`
 - [X] 4.0 transactions list view  
 
 - [X] 5.0 portfolio ( stock details ) list view  
-- [ ] 5.1 real time stock price * quantity owned  
+- [X] 5.1 real time stock price * quantity owned  
 
 - [ ] 6.0 dynamic portfolio font colors  
 - [ ] 6.1 current stock $ < day open $ = red  
