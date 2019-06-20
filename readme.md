@@ -21,30 +21,26 @@ __Frontend:__
 
 ### Wireframes
 
-Route URL |
+Route URL | `/register`  
 -|-
-/register |    
 
 ![register](docs/wireframes/register.png)
 ---
 
-Route URL |
+Route URL | `/signin`  
 -|-
-/signin |    
 
 ![signin](docs/wireframes/signin.png)  
 --
 
-Route URL |
+Route URL | `/portfolio`  
 -|-
-/portfolio |    
 
 ![portfolio](docs/wireframes/portfolio.png)
 --
 
-Route URL |
+Route URL | `/transactions`  
 -|-
-/transactions |    
 
 ![transactions](docs/wireframes/transactions.png)
 --
@@ -77,7 +73,8 @@ Route URL |
 
 ### DB Schema
 
-__users__
+__users__  
+
 column | data_type | details
 -|-|-
 id | integer | SERIAL PRIMARY
@@ -86,14 +83,16 @@ email | string | UNIQUE NOT NULL
 password_digest | string | NOT NULL
 created_date | date | DEFAULT CURRENT_TIMESTAMP
 
-__balance__
+__balance__  
+
 column | data_type | details
 -|-|-
 id | integer | SERIAL PRIMARY
 user_id | integer | REFERENCES users(id) ON DELETE CASCADE NOT NULL,
 total | string | NOT NULL
 
-__transactions__
+__transactions__  
+
 column | data_type | details
 -|-|-
 id | integer | SERIAL PRIMARY
