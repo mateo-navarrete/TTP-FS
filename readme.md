@@ -106,5 +106,21 @@ ___NOTE:___
 Prices are saved in the db as strings in the backend and then converted to numbers on the frontend to preserve accuracy when dealing with currency.  
 
 
+__API__  
+
+type | endpoint | details
+-|-|-
+POST | `/api/balances` | initBalance  
+PATCH | `/api/balances` | updateBalance  
+GET | `/api/transactions/:email` | getTransactions  
+POST | `/api/transactions` | handleTransaction  
+GET | `/api/users/isAuthenticated` | isAuthenticated  
+GET | `/api/users/:email` | getUser  
+POST | `/api/users/register` | registerUser  
+POST | `/api/users/signin` | signinUser  
+POST | `/api/users/signout` | signoutUser  
+DELETE | `/api/users/:email` | deleteUser  
+
+
 __TODO:__
 - [ ] Deploy to Heroku
