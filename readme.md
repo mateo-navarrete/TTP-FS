@@ -61,9 +61,9 @@ Route URL | `/transactions`
 - [ ] 3.2 buying stock requires balance >= ( stock price * quantity )  
 - [ ] 3.3 buying stock requires valid ticker symbol  
 
-- [ ] 4.0 transactions list view  
+- [X] 4.0 transactions list view  
 
-- [ ] 5.0 portfolio ( stock details ) list view  
+- [X] 5.0 portfolio ( stock details ) list view  
 - [ ] 5.1 real time stock price * quantity owned  
 
 - [ ] 6.0 dynamic portfolio font colors  
@@ -123,6 +123,7 @@ DELETE | `/api/users/:email` | deleteUser
 
 
 __TODO:__
+- [ ] Refactor & handle error codes
 - [ ] Deploy to Heroku
 
 ___FOR REFERENCE:___   
