@@ -9,8 +9,8 @@ _Technologies, frameworks, and libraries used include:_
 __Backend:__
 - [x] Express
 - [x] Node
-- [ ] Postgresql
-- [ ] Passport
+- [X] Postgresql
+- [X] Passport
 
 __Frontend:__
 - [x] React
@@ -50,11 +50,11 @@ Route URL | `/transactions`
 ![user-stories](docs/wireframes/user-stories.png)
 --
 
-- [ ] 1.0 registration requires name, email, & password  
+- [X] 1.0 registration requires name, email, & password  
 - [ ] 1.1 default balance $5000  
-- [ ] 1.2 registration requires unique email  
+- [X] 1.2 registration requires unique email  
 
-- [ ] 2.0 authentication requires email & password  
+- [X] 2.0 authentication requires email & password  
 
 - [ ] 3.0 buying stock requires ticker symbol & quantity   
 - [ ] 3.1 quantity must be integer  
