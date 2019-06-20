@@ -1,5 +1,18 @@
 //jscs:disable maximumLineLength
 const db = require('..');
+const authUtils = require('../auth/utils');
+
+const deleteUser = (req, res, next) => {
+  let sqlStr = 'DELETE FROM users WHERE email=$1';
+  db.none(sqlStr, req.params.email)
+    .then(() => {
+      res.status(200).json({
+        status: 'success',
+        message: `deleted user: ${req.params.email}`,
+      });
+    })
+    .catch(err => next(err));
+};
 
 const getUser = (req, res, next) => {
   let sqlStr =
@@ -15,6 +28,44 @@ const getUser = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const isAuthenticated = (req, res) => {
+  res.json({ email: req.user || null });
+};
+
+const registerUser = (req, res, next) => {
+  const rb = req.body;
+  const hash = authUtils.createHash(rb.password);
+  const config = {
+    user_name: rb.user_name,
+    password_digest: hash,
+    email: rb.email,
+  };
+  let sqlStr =
+    'INSERT INTO users ( user_name, password_digest, email ) VALUES ( ${user_name}, ${password_digest}, ${email} )';
+  db.none(sqlStr, config)
+    .then(() => {
+      res.send({
+        status: 'success',
+        message: `registered user: ${rb.user_name}`,
+      });
+    })
+    .catch(err => next(err));
+};
+
+const signinUser = (req, res) => {
+  res.json({ email: req.user.email });
+};
+
+const signoutUser = (req, res, next) => {
+  req.logout();
+  res.status(200).send('user signout success');
+};
+
 module.exports = {
+  deleteUser,
   getUser,
+  isAuthenticated,
+  registerUser,
+  signinUser,
+  signoutUser,
 };

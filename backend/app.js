@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
+const session = require('express-session');
+const passport = require('./db/auth/local');
 const indexRouter = require('./routes/index');
 const { balancesApi, transactionsApi, usersApi } = require('./routes/api');
 
@@ -16,7 +17,15 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('never gonna give u up'));
+let sessionConfig = {
+  secret: 'never gonna give u up',
+  resave: false,
+  saveUninitialized: true,
+};
+app.use(session(sessionConfig));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
