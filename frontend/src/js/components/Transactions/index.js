@@ -1,6 +1,10 @@
 //jscs:disable requireShorthandArrowFunctions
-import React, { Fragment as F } from 'react';
+import React from 'react';
+import { View } from './View';
+import { withTransactions } from '../../containers';
 
-export const Transactions = props => {
-  return <F>Transactions</F>;
+const WrappedComponent = props => {
+  return <View {...props} />;
 };
+
+export const Transactions = withTransactions(WrappedComponent);

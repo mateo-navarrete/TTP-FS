@@ -1,4 +1,18 @@
 import { getAuthStatus, registerUser, signinUser, signoutUser } from './auth';
-import { initBalance } from './balances';
+import {
+  getPortfolio,
+  getTransactions,
+  handleTransaction,
+  initBalance
+} from './user';
 
-export { getAuthStatus, registerUser, signinUser, signoutUser, initBalance };
+export {
+  getAuthStatus,
+  registerUser,
+  signinUser,
+  signoutUser,
+  getPortfolio,
+  getTransactions,
+  handleTransaction,
+  initBalance
+};
