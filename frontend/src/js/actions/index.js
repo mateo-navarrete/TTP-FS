@@ -1,3 +1,3 @@
-import { getAuthStatus } from './auth';
+import { getAuthStatus, registerUser, signinUser, signoutUser } from './auth';
 
-export { getAuthStatus };
+export { getAuthStatus, registerUser, signinUser, signoutUser };
