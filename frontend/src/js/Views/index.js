@@ -3,8 +3,8 @@ import { PrivateViews } from './PrivateViews';
 import { PublicViews } from './PublicViews';
 import { withAuthStatus } from '../containers';
 
-const WrappedComponent = ({ email, ...props }) => {
-  let isAuthenticated = email ? true : false;
+const WrappedComponent = ({ isAuthUser, ...props }) => {
+  let isAuthenticated = isAuthUser ? true : false;
   const renderView = isAuthenticated ? (
     <PrivateViews {...props} />
   ) : (

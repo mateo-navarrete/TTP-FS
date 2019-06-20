@@ -1,6 +1,6 @@
 import { SET_AUTH_STATUS } from '../../constants';
 
-const initState = { email: null };
+const initState = { isAuthUser: null };
 
 export const authReducer = (state = initState, action) => {
   let nextState;
@@ -8,7 +8,7 @@ export const authReducer = (state = initState, action) => {
     case SET_AUTH_STATUS:
       nextState = {
         ...state,
-        email: action.payload.email,
+        isAuthUser: action.payload.email,
       };
       return nextState;
     default:

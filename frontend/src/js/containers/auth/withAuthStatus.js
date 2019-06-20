@@ -5,7 +5,7 @@ import { getAuthStatus } from '../../actions';
 
 const mapStateToProps = ({ auth }) => {
   return {
-    email: auth.email,
+    isAuthUser: auth.isAuthUser,
   };
 };
 
