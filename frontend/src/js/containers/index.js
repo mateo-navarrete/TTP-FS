@@ -1,3 +1,4 @@
-import { withAuthStatus } from './auth';
+import { withStyles } from '@material-ui/core/styles';
+import { withAuthStatus, withAuthActions } from './auth';
 
-export { withAuthStatus };
+export { withAuthStatus, withAuthActions, withStyles };

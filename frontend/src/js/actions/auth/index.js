@@ -1,3 +1,8 @@
-import { getAuthStatus } from './authActions';
+import {
+  getAuthStatus,
+  registerUser,
+  signinUser,
+  signoutUser
+} from './authActions';
 
-export { getAuthStatus };
+export { getAuthStatus, registerUser, signinUser, signoutUser };
