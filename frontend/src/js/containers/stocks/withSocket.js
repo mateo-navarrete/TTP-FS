@@ -30,6 +30,7 @@ export const withSocket = WrappedComponent => {
       this.socket.on('connect', () => {
         console.log('connected', this.socket.id);
         this.socket.emit('subscribe', this.props.iexsymbols);
+        // console.log('subscribed to: ', this.props.iexsymbols);
       });
     }
 

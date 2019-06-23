@@ -33,12 +33,12 @@ const WrappedComponent = ({
     portfolio.map((stock, i) => {
       let total =
         stockData[stock.symbol] &&
-        +(+stockData[stock.symbol].price * +stock.total).toFixed(2);
+        +(+stockData[stock.symbol].price * +stock.quantity).toFixed(2);
       if (total) pValue += total;
       return (
         <F key={i}>
           <div>
-            {stock.symbol} {stock.total} @$
+            {stock.symbol} {stock.quantity} @$
             {stockData[stock.symbol] && stockData[stock.symbol].price}
             total$
             {total}
