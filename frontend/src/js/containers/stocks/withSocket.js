@@ -8,6 +8,7 @@ const mapStateToProps = ({ stocks, user }) => {
   return {
     iexsymbols: user.iexsymbols,
     stockData: stocks.stockData,
+    prevStockData: stocks.prevStockData,
   };
 };
 

@@ -6,6 +6,7 @@ import {
 
 const initState = {
   stockData: {},
+  prevStockData: {},
   stockPrice: '',
   stocksList: [],
 };
@@ -17,6 +18,7 @@ export const stocksReducer = (state = initState, action) => {
       const { payload } = action;
       nextState = {
         ...state,
+        prevStockData: state.stockData,
         stockData: { ...state.stockData, [payload.symbol]: payload },
       };
       return nextState;

@@ -30,4 +30,4 @@ INSERT INTO users ( user_name, email, password_digest ) VALUES ( 'demo', 'demo@d
 
 INSERT INTO balance ( user_id, total ) VALUES ( 1, '5000' );
 
-INSERT INTO transactions ( user_id, stock_symbol, sale_price, quantity ) VALUES ( 1, 'AAPL', '197.22', 3 ), ( 1, 'AAPL', '180.50', 2 ), ( 1, 'GOOGL', '1000', 1 ), ( 1, 'AMZN', '1800.25', 2 );
+-- INSERT INTO transactions ( user_id, stock_symbol, sale_price, quantity ) VALUES ( 1, 'AAPL', '197.22', 3 ), ( 1, 'AAPL', '180.50', 2 ), ( 1, 'GOOGL', '1000', 1 ), ( 1, 'AMZN', '1800.25', 2 );
