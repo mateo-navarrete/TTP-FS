@@ -66,10 +66,10 @@ Route URL | `/transactions`
 - [X] 5.0 portfolio ( stock details ) list view  
 - [X] 5.1 real time stock price * quantity owned  
 
-- [ ] 6.0 dynamic portfolio font colors  
-- [ ] 6.1 current stock $ < day open $ = red  
-- [ ] 6.2 current stock $ = day open $ = gray  
-- [ ] 6.3 current stock $ > day open $ = green  
+- [X] 6.0 dynamic portfolio font colors  
+- [X] 6.1 current stock $ < day open $ = red  
+- [X] 6.2 current stock $ = day open $ = gray  
+- [X] 6.3 current stock $ > day open $ = green  
 
 ### DB Schema
 
