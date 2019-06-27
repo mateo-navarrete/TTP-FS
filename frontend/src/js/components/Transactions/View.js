@@ -21,12 +21,15 @@ const WrappedComponent = ({ classes, transactions, user_name, ...props }) => {
   const renderStocks = transactions.map((stock, i) => {
     let formattedDate = formatDate(stock.date);
     return (
-      <F key={i}>
-        <div>
-          {formattedDate} {stock.symbol} ${stock.sale_price} x{stock.quantity} $
-          {(+stock.sale_price * stock.quantity).toFixed(2)}
+      <Paper className={classes.paper} key={i} style={{ marginBottom: '2px' }}>
+        <div className="flex space-around">
+          <div>{formattedDate} </div>
+          <div>{stock.symbol}</div>
+          <div>x{stock.quantity}</div>
+          <div>@${stock.sale_price}</div>
+          <div>total: ${(+stock.sale_price * stock.quantity).toFixed(2)}</div>
         </div>
-      </F>
+      </Paper>
     );
   });
   return (
@@ -35,12 +38,11 @@ const WrappedComponent = ({ classes, transactions, user_name, ...props }) => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-              <div>Transactions View</div>
-              <div>{user_name}</div>
+              <h1 className="lato">{user_name} Transactions</h1>
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Paper className={classes.paper}> {renderStocks}</Paper>
+            {renderStocks}
           </Grid>
         </Grid>
       </div>

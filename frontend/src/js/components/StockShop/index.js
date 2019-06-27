@@ -43,7 +43,7 @@ class WrappedComponent extends Component {
     const { selectedOption } = this.state;
     return (
       <F>
-        <div>Stock Shop</div>
+        <div>Purchase Stock</div>
         <div>balance: ${(+this.props.total).toFixed(2)}</div>
         <Select
           value={selectedOption}

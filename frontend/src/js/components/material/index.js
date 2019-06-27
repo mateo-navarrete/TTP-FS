@@ -18,7 +18,9 @@ import {
   Typography
 } from './core';
 import {
+  ArrowIcon,
   LockOutlinedIcon,
+  PersonIcon,
   SigninIcon,
   SignoutIcon,
   Visibility,
@@ -43,7 +45,9 @@ export {
   Slider,
   Toolbar,
   Typography,
+  ArrowIcon,
   LockOutlinedIcon,
+  PersonIcon,
   SigninIcon,
   SignoutIcon,
   Visibility,
