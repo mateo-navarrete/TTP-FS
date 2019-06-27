@@ -20,9 +20,7 @@ const WrappedComponent = ({ classes, ...props }) => {
   let url = props.location.pathname;
   return (
     <F>
-      <div className={classes.grow}>
-        <SignoutLink {...props} />
-      </div>
+      <div className={classes.grow} />
       <div className={classes.right}>
         {url !== '/transactions' ? (
           <div className={classes.margin}>
@@ -39,6 +37,7 @@ const WrappedComponent = ({ classes, ...props }) => {
           ''
         )}
       </div>
+      <SignoutLink {...props} />
     </F>
   );
 };

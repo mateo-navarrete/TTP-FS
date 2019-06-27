@@ -5,7 +5,7 @@ import {
   Avatar,
   Card,
   CardContent,
-  LockOutlinedIcon,
+  PersonIcon,
   Typography
 } from '../material';
 import { withStyles } from '../../containers';
@@ -41,7 +41,7 @@ const WrappedComponent = ({
   const renderHeader = (
     <div className="flex col align">
       <Avatar className={classes.avatar}>
-        <LockOutlinedIcon />
+        <PersonIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
         Register

@@ -29,16 +29,17 @@ export const withSocket = WrappedComponent => {
       });
 
       this.socket.on('connect', () => {
-        console.log('connected', this.socket.id);
+        // console.log('connected', this.socket.id);
         this.socket.emit('subscribe', this.props.iexsymbols);
         // console.log('subscribed to: ', this.props.iexsymbols);
       });
     }
 
     componentWillUnmount() {
+      this.socket.emit('unsubscribe', this.props.iexsymbols);
       this.socket.on('disconnect', () => {
         this.socket.emit('unsubscribe', this.props.iexsymbols);
-        console.log('Disconnected.');
+        // console.log('Disconnected.');
       });
     }
 
