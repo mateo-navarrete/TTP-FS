@@ -39,7 +39,7 @@ const WrappedComponent = ({
   ...props,
 }) => {
   let arrowClass =
-    fontColor === '#333' ? 'hidden' : fontColor === '#F00' ? 'hi' : ' ';
+    fontColor === '#333' ? 'hidden' : fontColor === '#F00' ? ' ' : 'hi';
   return (
     <Paper className={classes.card} style={{ marginBottom: '2px' }}>
       <div className="flex space-around" style={{ color: fontColor }}>
